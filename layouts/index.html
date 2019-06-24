@@ -5,13 +5,11 @@
   <div class="list">
     {{ if .Pages }}
     {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups}}
-    {{ range where .Pages "Section" "posts" }}
-  <h2 class="list-title">{{ .Key }}</h2>
+  <h2 class="list-title">{{  .Key  }}</h2>
     {{ range .Pages }}
 
     {{ partial "list-item.html" . }}
 
-    {{ end }}
     {{ end }}
     {{ end }}
   </div>
